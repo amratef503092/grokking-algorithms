@@ -1,5 +1,20 @@
-import 'package:linear_search/linear_search.dart' as linear_search;
+import 'dart:math';
 
-void main(List<String> arguments) {
-  print('Hello world: ${linear_search.calculate()}!');
+void main() {
+  // random number
+  Random random = Random();
+
+  List<int> nums = List<int>.generate(100, (index) => random.nextInt(100) + 1);
+  print(linearSearch(nums, 19));
+}
+
+// linear search
+
+int linearSearch(List list, int target) {
+  for (int i in list) {
+    if (i == target) {
+      return i;
+    }
+  }
+  return -1;
 }
